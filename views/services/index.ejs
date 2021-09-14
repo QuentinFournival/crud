@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>service controller</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Service controller</h1>
+    <a href="/new" class="btn btn-success">New Service</a>
+    <a class="btn btn-info" href="/purposes"> liste des purposes</a>
+    <% services.forEach(service => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h4 class="card-title"><%= service.name %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= service.email %>
+          </div>
+          
+          <a href="services/edit/<%= service.id %>" class="btn btn-info">Edit</a>
+          <a class="btn btn-info" href="/purposes/create/<%= service.id %>">Créer un purpose</a>
+          <form action="/api/services/<%= service.id %>/delete" method="POST" class="d-inline">
+            <button id="test" type="submit" class="btn btn-danger">Delete</button>
+          </form>
+          <a class="btn btn-info" href="/purposes/<%= service.id %>">voir les Purposes de <%= service.name%></a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+
+</body>
+</html>

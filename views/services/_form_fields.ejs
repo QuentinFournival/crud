@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="name">Service name</label>
+    <input required value="<%= service.name %>" type="text" name="name" id="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" class="form-control"><%= service.email %></input>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" class="form-control"><%= service.password %></input>
+  </div>
+  <a href="/" class="btn btn-secondary">Cancel</a>
+  <button type="submit" class="btn btn-primary">Save</button>
